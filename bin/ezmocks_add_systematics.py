@@ -666,9 +666,9 @@ def make_clustering_catalog_random(rand, mock, seed=None):
     rand_clust = Table()
     rand_clust['RA'] = rand['RA']*1
     rand_clust['DEC'] = rand['DEC']*1
-    rand_clust['Z'] = rand['Z']*1
-    rand_clust['NZ'] = rand['NZ']*1
-    rand_clust['WEIGHT_FKP'] = rand['WEIGHT_FKP']*1
+    #rand_clust['Z'] = rand['Z']*1    ## Z, NZ, WEIGHT_FKP comes from the data
+    #rand_clust['NZ'] = rand['NZ']*1
+    #rand_clust['WEIGHT_FKP'] = rand['WEIGHT_FKP']*1
     rand_clust['COMP_BOSS'] = rand['COMP_BOSS']*1
     rand_clust['sector_SSR'] = rand['sector_SSR']*1
 
@@ -678,7 +678,7 @@ def make_clustering_catalog_random(rand, mock, seed=None):
     index = np.arange(len(mock))
     ind = np.random.choice(index, size=len(rand), replace=True)
     
-    fields = ['WEIGHT_NOZ', 'WEIGHT_CP', 'WEIGHT_SYSTOT'] 
+    fields = ['WEIGHT_NOZ', 'WEIGHT_CP', 'WEIGHT_SYSTOT', 'Z', 'NZ', 'WEIGHT_FKP'] 
     for f in fields:
         rand_clust[f] = mock[f][ind]
 
