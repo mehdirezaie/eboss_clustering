@@ -407,8 +407,8 @@ def flux_to_mag(flux, band, ebv=None):
 map_syst = {}
 
 def read_systematic_maps():
-
-    indir = os.environ['EBOSS_CLUSTERING_DIR']+'/etc'
+    indir = '/home/mehdi/data/templates' # MR's local pc
+    #indir = os.environ['EBOSS_CLUSTERING_DIR']+'/etc'
     files = [indir+'/NHI_HPX.fits.gz',
              indir+'/SDSSimageprop_Nside512.fits',
              indir+'/allstars17.519.9Healpixall256.dat']
